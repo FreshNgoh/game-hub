@@ -18,8 +18,8 @@ const useGames = (gameQuery: GameQuery) => useInfiniteQuery<FetchResponse<Game>,
     queryKey: ["games", gameQuery],
     queryFn: ({ pageParam = 1 }) => apiClient.getAll({
     params: {
-      genres: gameQuery.genre?.id,
-      parent_Peplatforms: gameQuery.platform?.id,
+      genres: gameQuery.genreId,
+      parent_Peplatforms: gameQuery.platformId,
       ordering: gameQuery.sortOrder,
       search: gameQuery.searchText,
       page: pageParam
